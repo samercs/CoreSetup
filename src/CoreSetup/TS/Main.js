@@ -38,8 +38,7 @@ var Main = (function () {
                         dataField: "type",
                         width: 50
                     },
-                    "name", "email"
-                ]
+                    "name", "email"]
             };
             $("#gridContainer").dxDataGrid(options);
         });
