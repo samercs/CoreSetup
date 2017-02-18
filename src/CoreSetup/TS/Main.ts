@@ -1,7 +1,7 @@
 ﻿/// <reference path="../typings/index.d.ts" />
 
 import "../Less/site.less";
-
+import "../Less/my.less";
 class Main {
     constructor() {   
         $.get("/home/persona", (persons) => {

@@ -1,6 +1,7 @@
 /// <reference path="../typings/index.d.ts" />
 "use strict";
 require("../Less/site.less");
+require("../Less/my.less");
 var Main = (function () {
     function Main() {
         $.get("/home/persona", function (persons) {
