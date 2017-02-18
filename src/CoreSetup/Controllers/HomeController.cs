@@ -27,6 +27,21 @@ namespace CoreSetup.Controllers
             var result = await _context.Persona.ToListAsync();
             return Json(result);
         }
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody]Persona p)
+        {
+
+            var person = await _context.Persona.FirstOrDefaultAsync(i => i.Id == p.Id);
+            if (person != null)
+            {
+                person.Email = p.Email;
+                person.Name = p.Name;
+            }
+            _context.Entry(person).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return Ok();
+
+        }
 
         public IActionResult DataInit()
         {

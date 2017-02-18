@@ -27,8 +27,17 @@ class Main {
                 headerFilter: {
                     visible: true
                 },
-                onEditingStart: function (e) {
-                    console.log("EditingStart");
+                onRowUpdated: function (e) {
+                    console.log('saving');
+                    $.ajax({
+                        url: "/home/update",
+                        type: 'PUT',
+                        data: JSON.stringify(e.key),
+                        contentType: "application/json",
+                        success: function (data) { 
+                            
+                        }
+                    });
                 },
                 columns: [
                     {

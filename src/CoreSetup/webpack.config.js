@@ -24,7 +24,7 @@ module.exports = {
         ]
     },
     plugins: [
-      new CleanWebpackPlugin([outPath  + '/js', outPath + '/css', outPath+'/lib']),
+      new CleanWebpackPlugin([outPath  + '/js', outPath + '/css']),
       new webpack.optimize.UglifyJsPlugin({minimize: true}),
       new ExtractTextPlugin("/css/[name].min.css", { allChunks : true}),
       new CopyWebpackPlugin([

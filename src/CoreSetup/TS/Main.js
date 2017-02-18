@@ -28,7 +28,14 @@ var Main = (function () {
                     visible: true
                 },
                 onEditingStart: function (e) {
-                    console.log("EditingStart");
+                    $.ajax({
+                        url: "/home/person/update",
+                        type: 'PUT',
+                        data: e.data,
+                        success: function (data) {
+                            alert('Load was performed.');
+                        }
+                    });
                 },
                 columns: [
                     {
